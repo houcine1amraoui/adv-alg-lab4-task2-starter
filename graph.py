@@ -1,50 +1,50 @@
 class Graph:
     def __init__(self):
-        # adjacency list: each key is a node, value is a list of neighbors
-        self.adj = {}
+        # This builds the graph shown in graph.png
+        self.adj = {}   # adjacency list
+        self.add_edge('1', '2'); self.add_edge('1', '3'); self.add_edge('1', '4')
+        self.add_edge('2', '3'); 
+        # complete edges addition below
 
-    # ADD NODE
-    def add_node(self, node):
-        # If node not in adjacency list:
-        #       create entry: node → empty list
-        pass
+    # Add an undirected edge v1 — v2
+    def add_edge(self, v1, v2):
+        # Add a node if not already present
+        if v1 not in self.adj: self.adj[v1] = []
+        if v2 not in self.adj: self.adj[v2] = []
+        self.adj[v1].append(v2)
+        self.adj[v2].append(v1)
 
-    # ADD EDGE (undirected)
-    def add_edge(self, u, v):
-        # Ensure both u and v exist (reuse add_node)
-        # Add v to u's adjacency list
-        # Add u to v's adjacency list
-        pass
+    # Display adjacency list
+    def display(self):
+        for v in self.adj:
+            print(f"{v} -> {self.adj[v]}")
 
-    # BFS TRAVERSAL
     def bfs(self, start):
-        # 1. Create a queue (list)
-        # 2. Create a visited set
-        # 3. Add start to queue and mark visited
-        # 4. Create an empty result list
-        #
-        # 5. While queue not empty:
-        #       - Pop first element
-        #       - Add to result
-        #       - For each neighbor:
-        #             * If not visited:
-        #                   - mark visited
-        #                   - add to queue
-        #
-        # 6. Return result list
+        # Create an empty set to keep track of visited nodes.
+        # Create an empty list to store the final traversal order.
+        # Create an empty queue for BFS.
+        # Add the starting node to the queue and mark it as visited.
+        # While the queue is not empty:
+            # Remove the first element from the queue (this is the current node).
+            # Add the current node to the traversal result.
+            # For each neighbor of the current node (exploration):
+                # If the neighbor has not been visited yet:
+                    # Mark it as visited.
+                    # Add it to the queue.
+        # Return the traversal result.
         pass
-
-    # DFS TRAVERSAL (recursive)
+    
     def dfs(self, start):
-        # 1. Create an empty result list
-        # 2. Create a visited set
-        #
-        # 3. Define helper dfs_visit(node):
-        #       - Mark node visited
-        #       - Add node to result
-        #       - For each neighbor:
-        #             * If not visited → recursive call
-        #
-        # 4. Call dfs_visit(start)
-        # 5. Return result
+        # Create an empty set to keep track of visited nodes.
+        # Create an empty list to store the traversal order.
+        # Define a recursive helper function (call it whatever you like):
+            # Mark the current node as visited.
+            # Add the current node to the traversal result.
+            # Get all neighbors of the current node.
+            # Sort the neighbors in ascending numeric order.
+            # For each neighbor:
+                # If the neighbor has not been visited yet:
+                    # Recursively call the helper function on that neighbor.
+        # Call the helper function on the start node.
+        # Return the traversal result.
         pass
