@@ -23,28 +23,34 @@ class Graph:
         # Create an empty set to keep track of visited nodes.
         # Create an empty list to store the final traversal order.
         # Create an empty queue for BFS.
-        # Add the starting node to the queue and mark it as visited.
+
+        # Add the starting node to the queue
+        # Mark the starting node as visited.
+        # Add the current node to the traversal result.
+
         # While the queue is not empty:
-            # Remove the first element from the queue (this is the current node).
-            # Add the current node to the traversal result.
+            # Remove the first element from the queue
+            
             # For each neighbor of the current node (exploration):
                 # If the neighbor has not been visited yet:
-                    # Mark it as visited.
                     # Add it to the queue.
+                    # Add the current node to the traversal result.
+                    # Mark it as visited.
+                    
         # Return the traversal result.
         pass
     
     def dfs(self, start):
         # Create an empty set to keep track of visited nodes.
         # Create an empty list to store the traversal order.
-        # Define a recursive helper function (call it whatever you like):
-            # Mark the current node as visited.
-            # Add the current node to the traversal result.
-            # Get all neighbors of the current node.
-            # Sort the neighbors in ascending numeric order.
-            # For each neighbor:
-                # If the neighbor has not been visited yet:
+
+        # Define a recursive helper function:
+            # If the neighbor has not been visited yet:
+                # Add the current node to the traversal result.
+                # Mark the current node as visited.
+                # For each neighbor of the current node (exploration):
                     # Recursively call the helper function on that neighbor.
+        
         # Call the helper function on the start node.
         # Return the traversal result.
         pass
